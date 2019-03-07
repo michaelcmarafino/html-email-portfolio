@@ -5,16 +5,21 @@
     --font: 'Montserrat', sans-serif;
 }
 
-/* Header */
+body {
+    font-family: var(--font);
+}
+
+/* Header section */
 
 .background {
     height: 50vh;
     text-align: center;
     background: url('../img/desk.jpeg');
+    background-repeat: no-repeat;
     position: relative;
 }
 
-.layer{
+header .layer{
     background-color: var(--main-color);
     position: absolute;
     top: 0;
@@ -26,9 +31,8 @@
     justify-content: center;
 }
 
-.container {
+header .container {
     color: var(--text-color);
-    font-family: var(--font);
 }
 
 header h1 {
@@ -40,22 +44,33 @@ header h3 {
     padding: 1.5rem 0 1.5rem;
 }
 
-.icon-container {
-    
+header .icon-container {
+    animation: myAnimation .5s 1 0s linear;
 }
 
-.icon {
+@keyframes myAnimation{
+    0%{
+        transform: translateY(125%);
+        opacity: 0;
+        }
+    100%{
+        transform: rotate(xx);
+        opacity: 1;
+        }
+}
+
+header .icon {
     display: inline-block;
     padding: 1rem;
     height: 30px;
     width: 30px;
-    background: white;
+    background: var(--text-color);
     border-radius: 50%;
     margin: 1rem 1rem 0;
     position: relative;
 }
 
-i {
+header i {
     color: var(--black);
     font-size: 2.5rem;
     position: absolute;
@@ -63,6 +78,105 @@ i {
     left: 12px;
 }
 
-/* About Me */
+/* About Me section */
+
+#about-me {
+    padding: 1.8rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+#about-me .container {
+    max-width: 700px;
+}
+
+.about-me {
+    text-align: center;
+    color: var(--black);
+}
+
+.about-me h2 {
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.about-me hr {
+    opacity: 0.8;
+    width: 10rem;
+}
+
+.about-me p {
+    padding: .8rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Email Portfolio section */
+#email-portfolio {
+    padding: 1.8rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 225, 1, 0.75);
+    color: var(--black);
+}
+
+#email-portfolio h2 {
+    font-size: 3rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+#email-portfolio hr {
+    opacity: 0.8;
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+
+#email-portfolio p {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+#email-portfolio .example-container {
+    padding: 2rem;
+}
+
+#email-portfolio .example-container img {
+    max-width: 270px;
+    max-height: 120px;
+}
+
+#email-portfolio .ht-img {
+    padding-right: 1rem;
+}
+
+#email-portfolio .macys-img {
+    padding-left: 1rem;
+}
 
 
+/* Footer section */
+footer {
+    text-align: center;
+    padding: 2.2rem;
+    color: var(--black);
+    font-size: 0.8rem;
+}
+
+
+@media only screen and (max-width: 580px) {
+    #email-portfolio .example-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #email-portfolio .example-container img {
+        padding: 1rem;
+    }
+  }
